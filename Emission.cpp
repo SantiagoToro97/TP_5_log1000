@@ -14,9 +14,9 @@ Emission::Emission (string titre,
     this->animateur = animateur;
     
     // Chaine information
-    this->chaineName = chaineName;
-    this->chaineCodePostal = chaineCodePostal;
-    this->chaineAddress = chaineAddress;
+    this->chaine.getChaineName() = chaineName;
+    this->chaine.getChaineCodePostal() = chaineCodePostal;
+    this->chaine.getChaineAddress() = chaineAddress;
     
 }
 
@@ -32,9 +32,9 @@ void Emission::setAnimateur(string animateur) {
 void Emission::associerChaine (string chaineName,
                                string chaineCodePostal,
                                string chaineAddress) {
-    this->chaineName = chaineName;
-    this->chaineCodePostal = chaineCodePostal;
-    this->chaineAddress = chaineAddress;
+	this->chaine.getChaineName() = chaineName;
+	this->chaine.getChaineCodePostal() = chaineCodePostal;
+	this->chaine.getChaineAddress() = chaineAddress;
 }
 
 
@@ -47,15 +47,15 @@ string Emission::getAnimateur() {
 }
 
 string Emission::getChaineName() {
-    return this->chaineName;
+    return this->chaine.getChaineName();
 }
 
 string Emission::getChaineCodePostal() {
-    return this->chaineCodePostal;
+    return this->chaine.getChaineCodePostal();
 }
 
 string Emission::getChaineAddress() {
-    return this->chaineAddress;
+    return this->chaine.getChaineAddress();
 }
 
 
@@ -66,9 +66,9 @@ void Emission::saveEmission (string fileName) {
     // write to outfile
     outfile<<this->titre <<","
                    <<this->animateur <<","
-                   <<this->chaineName << ","
-                   <<this->chaineCodePostal << ","
-                   <<this->chaineAddress <<"\n";
+                   <<this->chaine.getChaineName() << ","
+                   << this->chaine.getChaineCodePostal() << ","
+                   << this->chaine.getChaineAddress() <<"\n";
  
     outfile.close();
 }
@@ -159,9 +159,9 @@ Emission* Emission::trouverEmission (string DB, string titre) {
 void Emission::afficher() {
     std::cout << "Titre : " << this->titre << std::endl;
     std::cout << "Animateur : " << this->animateur << std::endl;
-    std::cout << "Chaine name : " << this->chaineName << std::endl;
-    std::cout << "Chaine code postale : " << this->chaineCodePostal << std::endl;
-    std::cout << "Chaine address : " << this->chaineAddress << std::endl;
+    std::cout << "Chaine name : " << this->chaine.getChaineName() << std::endl;
+    std::cout << "Chaine code postale : " << this->chaine.getChaineCodePostal() << std::endl;
+    std::cout << "Chaine address : " << this->chaine.getChaineAddress() << std::endl;
 }
 
 

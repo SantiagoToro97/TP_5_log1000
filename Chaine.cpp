@@ -14,7 +14,7 @@ string Chaine::getChaineName() {
 	return chaineNom_;
 }
 
-string chaine::getChaineCodePostal() {
+string Chaine::getChaineCodePostal() {
 	return chaineCodePostal_;
 }
 
